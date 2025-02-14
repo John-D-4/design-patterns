@@ -1,62 +1,68 @@
-Decision Support Questions
-  What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
-  What protocols are normally found at a given frequency?
-  What attribute measurements are required to identify a given protocol?
+#RF pattern draft
+###Decision Support Questions
+ - What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
+ - What protocols are normally found at a given frequency?
+ - What attribute measurements are required to identify a given protocol?
 
-Wave Properties:
-  Wavelength
-  Frequency
-  Amplitude
-  Polarity
+##classes sketched out
+###Wave Properties (quality, determinable)
+ - Wavelength
+ - Frequency
+ - Amplitude
+ - Polarity
   
-Signal properties:
-  Rate
-  Bandwidth
-  Modulation
-  Encoding
+###Signal properties:
+ - Rate
+ - Bandwidth
+ - Modulation
+ - Encoding
 
-Protocol properties:
-  Bands
-  Rates
-  Frequencies
-  Frequency changes
+###Protocol properties:
+ - Bands
+ - Rates
+ - Frequencies
+ - Frequency changes
 
-Radio components:
-  Antenna
-  Tuner
-  Detector
-  Amplifier
+###Radio components:
+ - Antenna
+ - Tuner
+ - Detector
+ - Amplifier
 
-Material entities:
-  Radio components
+###Material entities:
+ - Radio components
 
-Immaterial entities:
-  radio waves
+###Immaterial entities:
+ - radio waves
 
-Qualities:
-  Properties listed
+###Qualities:
+ - Properties listed
   
-Processes:
-  Act of transmission
-  Act of reception
+###Processes:
+ - Act of transmission
+ - Act of reception
   
-Realizable entity:
-  Signal
+###Realizable entity:
+ - Signal
 
-Immaterial entities:
-  Space
-  Carrier wave
+###Immaterial entities?:
+ - Space
+ - Carrier wave
 
-Temporal Region:
-  Propagation time
+###Temporal Region:
+ - Propagation time
+ - Reception
+ - Transmission
 
-Generically dependent continuant:
-  Also the properties, ugh
+###Generically dependent continuant:
+ - Also the properties, ugh... time to try out more specific relation types
 
   
+```
 +---------------------key--------------------+
 | arrows are "is_a" unless marked otherwise  |
 +--------------------------------------------+
+```
  ```mermaid
 
 graph RL
@@ -72,11 +78,6 @@ graph RL
 
 	M(Disposition):::BFO-->J(Realizable<br> Entity)
 	N(Function):::BFO-->M(Disposition)
-	O(Site):::BFO-->H(Immaterial<br> Entity):::BFO
-
- 
-
- 
 
 	X(Fiat Object Part):::BFO-->G(Material<br> Entity):::BFO
 	Y(Object<br> Aggregate):::BFO-->G(Material<br> Entity):::BFO
@@ -86,28 +87,33 @@ graph RL
 	AB(Process<br> Boundary):::BFO-->C(Occurrent)
 	AC(Temporal<br> Region):::BFO-->C(Occurrent)
 	AD(Spatiotemporal<br> Region):::BFO-->C(Occurrent)
-	AE(History):::BFO-->AA(Process):::BFO
 	AF(Zero-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region):::BFO
 	AI(One-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region):::BFO
 	AG(Temporal<br> Instant):::BFO-->AF(Zero-Dimensional<br> Temporal Region):::BFO
 	AH(Temporal<br> Interval):::BFO-->AI(One-Dimensional<br> Temporal Region):::BFO
-	
-	    EA[radio] --> G
 
     	EC[signal<br /> property] --> E
 		
 
-    	JA[rf transceiver] --> J(Realizable<br />Entity)
+    	YA[radio] --> Y
+		YAA[antenna] -- part_of --> YA
+		YAB[tuner] -- part_of --> YA
+		YAC[detector] -- part_of --> YA
+		YAD[amplifier] -- part_of --> YA
+		
 
 		JC[signal] --> J
     	
-		UE(signal property) --> K(Relational<br /> Quality)
-			UEA[frequency] --> UE
-			UEB[power] --> UE
-			UED[protocol] --> UE
-			UEF[periodicity] --> UE
-		
-
+		UE(wave property) --> K(Relational<br /> Quality)
+			UEA[wavelength] -- is_about --> UE
+			UEB[frequency] -- is_about --> UE
+			UED[amplitude] -- is_about --> UE
+			UEF[polarity] -- is_about --> UE
+	UF(signal property) --> K(Relational<br /> Quality)
+			UFA[rate] -- is_about --> UF
+			UFB[bandwidth] -- is_about --> UF
+			UFD[modulation] -- is_about --> UF
+			UFF[encoding] -- is_about --> UF
 
 			AAC[act of<br />transmission] --> AA(Process)
 			AAB[act of<br />reception] --> AA(Process)
