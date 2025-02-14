@@ -1,60 +1,60 @@
-#RF pattern draft
-###Decision Support Questions
+# RF pattern draft
+## Decision Support Questions
  - What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
  - What protocols are normally found at a given frequency?
  - What attribute measurements are required to identify a given protocol?
 
-##classes sketched out
-###Wave Properties (quality, determinable)
+## classes sketched out
+### Wave Properties (quality, determinable)
  - Wavelength
  - Frequency
  - Amplitude
  - Polarity
   
-###Signal properties:
+### Signal properties:
  - Rate
  - Bandwidth
  - Modulation
  - Encoding
 
-###Protocol properties:
+### Protocol properties:
  - Bands
  - Rates
  - Frequencies
  - Frequency changes
 
-###Radio components:
+### Radio components:
  - Antenna
  - Tuner
  - Detector
  - Amplifier
 
-###Material entities:
+### Material entities:
  - Radio components
 
-###Immaterial entities:
+### Immaterial entities:
  - radio waves
 
-###Qualities:
+### Qualities:
  - Properties listed
   
-###Processes:
+### Processes:
  - Act of transmission
  - Act of reception
   
-###Realizable entity:
+### Realizable entity:
  - Signal
 
-###Immaterial entities?:
+### Immaterial entities?:
  - Space
  - Carrier wave
 
-###Temporal Region:
+### Temporal Region:
  - Propagation time
  - Reception
  - Transmission
 
-###Generically dependent continuant:
+### Generically dependent continuant:
  - Also the properties, ugh... time to try out more specific relation types
 
   
