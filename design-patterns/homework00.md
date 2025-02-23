@@ -18,7 +18,7 @@ Prior to next meeting please send me at least 2 relations you've identified and 
 
 assumptions: 
  - "in life" and lower-case variables imply instances/particulars, not classes/universals
- - "in life" and upper-case variable R implies 
+ - "in life" and upper-case variable R implies continuant relation
 
 Relationship 0, *john-d-4 flies fa3000aaa*: 
   - Is this relation reflexive
