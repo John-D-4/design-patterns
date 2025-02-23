@@ -54,19 +54,21 @@ Relationship 0, *john flies fa3000aaa*:
     - for every john, fa3000aaa, and fa3111bbb, if john flies fa3000aaa and fa3000aaa flies fa3111bbb then john flies fa3111bbb
     - no
   
-Relationship 1 *john flies fa3000aaa*: 
+Relationship 1 *john has_role pilot*: 
   - Is this relation reflexive
     - i.e. for every x is xRx
     - for every john is john flies john
+    - no
   - Is this relation irreflexive
     - i.e. no x is such that xRx
     - no john is such that john flies john
   - Is this relation symmetric
     - i.e. for every x and y, if xRy then yRx
-    - for every john and y, if johnRfa3000aaa then fa3000aaaRx
+    - for every john and y, if john flies fa3000aaa then fa3000aaa flies john
   - Is this relation antisymmetric
     - i.e. for every x and y, if xRy and yRx then x=y
-    - for every john and fa3000aaa, if johnRfa3000aaa and fa3000aaaRx then john=fa3000aaa
+    - for every john and fa3000aaa, if john flies fa3000aaa and fa3000aaa flies john then john=fa3000aaa
+    - no
   - Is this relation asymmetric
     - i.e. for every x and y, if xRy then it is not the case that yRx
     - for every john and fa3000aaa, if john flies fa3000aaa then it is not the case that fa3000aaa flies John
