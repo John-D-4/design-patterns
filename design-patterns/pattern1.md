@@ -1,58 +1,35 @@
-# RF pattern draft
+# toaster pattern draft
 ## Decision Support Questions
- - What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
- - What protocols are normally found at a given frequency?
- - What attribute measurements are required to identify a given protocol?
+- what is toaster
+- what does it do
+- how does it do it
 
 ## classes sketched out
-### Wave Properties (quality, determinable)
- - Wavelength
- - Frequency
- - Amplitude
- - Polarity
-  
-### Signal properties:
- - Rate
- - Bandwidth
- - Modulation
- - Encoding
-
-### Protocol properties:
- - Bands
- - Rates
- - Frequencies
- - Frequency changes
-
-### Radio components:
- - Antenna
- - Tuner
- - Detector
- - Amplifier
+### Properties (quality, determinable)
+ - input
+ - output
+ - process
 
 ### Material entities:
- - Radio components
+ - toaster components
 
 ### Immaterial entities:
- - radio waves
+ - heat waves
 
 ### Qualities:
  - Properties listed
   
 ### Processes:
- - Act of transmission
- - Act of reception
+ - Act of toasting
   
 ### Realizable entity:
- - Signal
+ - 
 
 ### Immaterial entities?:
- - Space
- - Carrier wave
+ - 
 
 ### Temporal Region:
- - Propagation time
- - Reception
- - Transmission
+ - toasting time
 
 ### Generically dependent continuant:
  - Also the properties, ugh... time to try out more specific relation types
@@ -130,5 +107,3 @@ graph RL
     classDef BFO fill:#F5AD27,color:#060606
 ```
 from https://github.com/BFO-ontology/BFO-2020
-
-i am trapped in property graph hell
