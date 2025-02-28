@@ -27,6 +27,9 @@
 
 
 
+Notes
+
+
 a toaster has the function of toasting bread: represented
 
 the resulting bread's quality of toastiness is affected by the toasting process: represented
