@@ -40,6 +40,7 @@ a toaster toasts successfully by exposing bread to heat without exposing the use
  ```mermaid
 
 graph RL
+
 	B(Continuant)-->A(Entity):::BFO
 	D(Specifically Dependent<br> Continuant)-->B(Continuant):::BFO
 	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)
@@ -69,22 +70,26 @@ graph RL
 	
 	
 	ZA -- has_function --> NA
-		ZAA[my toaster]:::p -- instance_of --> ZA
-	
+		ZAA[my toaster]:::p -. instance_of .-> ZA
+		ZA -- participates_in --> AAA
 	ZB[bread] --> Z
-		ZBA[my breakfast]:::p -- instance_of --> ZB
+		ZBA[my breakfast]:::p -. instance_of .-> ZB
 	ZB -- has_realization --> IA
-	
 		AAA[act of<br />toasting] --> AA(Process)
 		AAA -- occurs in --> AFA
-		AAA -- has_participant --> ZB
+		ZB -- participates_in --> AAA
 		
 	
 	NA[to toast] --> N(Function)
 	
 		AFA[toasting<br />time] --> AI
 
-	ZA -- participates_in --> AAA
+
+
+
+K00(BFO class):::BFO
+K01[class]
+K02[particular]:::p
 
     classDef BFO fill:#F5AD27,color:#060606
     classDef p fill:#771177,color:#AAAAAA
