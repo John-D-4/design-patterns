@@ -1,4 +1,4 @@
-# toaster pattern draft
+# pattern exercise: toaster
 ## Decision Support Questions
 - what is a toaster?
 - what is it meant to do?
@@ -56,10 +56,10 @@ graph RL
 	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)
 	F(Independent<br> Continuant)-->B(Continuant)
 	G(Material Entity)-->F(Independent<br> Continuant):::BFO
-	H(Immaterial<br> Entity):::BFO-->F(Independent<br> Continuant)
+
 	I(Quality):::BFO-->D(Specifically Dependent<br> Continuant):::BFO
 	J(Realizable<br> Entity):::BFO-->D(Specifically Dependent<br> Continuant)
-	K(Relational<br> Quality):::BFO-->I(Quality):::BFO
+
 
 	M(Disposition):::BFO-->J(Realizable<br> Entity)
 	N(Function):::BFO-->M(Disposition)
@@ -68,9 +68,9 @@ graph RL
 	Z(Object<br />024-BFO):::BFO-->G(Material<br> Entity):::BFO
 	C(Occurrent):::BFO-->A(Entity):::BFO
 	AA(Process):::BFO-->C(Occurrent):::BFO
-	AB(Process<br> Boundary):::BFO-->C(Occurrent)
+
 	AC(Temporal<br> Region):::BFO-->C(Occurrent)
-	AD(Spatiotemporal<br> Region):::BFO-->C(Occurrent)
+
 	
 	AI(One-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region<br />103-BFO):::BFO
 	
