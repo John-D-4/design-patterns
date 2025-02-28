@@ -14,7 +14,7 @@
  - toaster components
 
 ### Immaterial entities:
- - heat waves
+ - heat waves: not represented as not all toasters supply their own heat
 
 ### Qualities:
  - Toastiness 
