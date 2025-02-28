@@ -17,27 +17,17 @@
  - heat waves
 
 ### Qualities:
- - Properties listed
+ - Toastiness 
   
 ### Processes:
  - Act of toasting
   
-### Realizable entity:
- - 
-
-### Immaterial entities?:
- - 
-
 ### Temporal Region:
  - toasting time
 
-### Generically dependent continuant:
- - Also the properties
-
-
-a toaster is a [140-BFO] object [024-BFO] with components such as bread grate and human interface
-a toaster has the function of toasting bread
-a toaster toasts successfully by exposing bread to heat without exposing the user to the same heat
+a toaster is a [140-BFO] object [024-BFO] with components such as bread grate and human interface: not represented
+a toaster has the function of toasting bread: represented
+a toaster toasts successfully by exposing bread to heat without exposing the user to the same heat: not represented
   
 ```
 +---------------------key--------------------+
