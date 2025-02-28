@@ -25,9 +25,16 @@
 ### Temporal Region:
  - toasting time
 
-a toaster is a [140-BFO] object [024-BFO] with components such as bread grate and human interface: not represented
+
+
 a toaster has the function of toasting bread: represented
+
+the resulting bread's quality of toastiness is affected by the toasting process: represented
+
+a toaster is a [140-BFO] object [024-BFO] with components such as bread grate and human interface: not represented
+
 a toaster toasts successfully by exposing bread to heat without exposing the user to the same heat: not represented
+
   
 ```
 +---------------------key--------------------+
@@ -86,11 +93,11 @@ graph RL
 
 
 
-
+subgraph Key
 K00(BFO class):::BFO
 K01[class]
 K02[particular]:::p
-
+end
     classDef BFO fill:#F5AD27,color:#060606
     classDef p fill:#771177,color:#AAAAAA
 
