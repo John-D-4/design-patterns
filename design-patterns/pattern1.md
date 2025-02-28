@@ -60,25 +60,29 @@ graph RL
 	AB(Process<br> Boundary):::BFO-->C(Occurrent)
 	AC(Temporal<br> Region):::BFO-->C(Occurrent)
 	AD(Spatiotemporal<br> Region):::BFO-->C(Occurrent)
-
+	
 	AI(One-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region<br />103-BFO):::BFO
-
+	
 	IA[toastiness] --> I
+		
     	ZA[toaster] --> Z
-
-
+	
+	
 	ZA -- has_function --> NA
-	ZAA[my toaster]:::p -- instance_of --> ZA
-
+		ZAA[my toaster]:::p -- instance_of --> ZA
+	
 	ZB[bread] --> Z
-	ZBA[my breakfast]:::p -- instance_of --> ZB
-
-	AAA[act of<br />toasting] --> AA(Process)
-	AAA -- occurs in --> AFA
+		ZBA[my breakfast]:::p -- instance_of --> ZB
+	ZB -- has_realization --> IA
+	
+		AAA[act of<br />toasting] --> AA(Process)
+		AAA -- occurs in --> AFA
+		AAA -- has_participant --> ZB
+		
 	
 	NA[to toast] --> N(Function)
-	        
-	AFA[toasting<br />time] --> AI
+	
+		AFA[toasting<br />time] --> AI
 
 	ZA -- participates_in --> AAA
 
