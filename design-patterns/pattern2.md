@@ -4,55 +4,9 @@
  - What protocols are normally found at a given frequency?
  - What attribute measurements are required to identify a given protocol?
 
-## classes sketched out
-### Wave Properties (quality, determinable)
- - Wavelength
- - Frequency
- - Amplitude
- - Polarity
-  
-### Signal properties:
- - Rate
- - Bandwidth
- - Modulation
- - Encoding
-
-### Protocol properties:
- - Bands
- - Rates
- - Frequencies
- - Frequency changes
-
-### Radio components:
- - Antenna
- - Tuner
- - Detector
- - Amplifier
-
-### Material entities:
- - Radio components
-
-### Immaterial entities:
- - radio waves
-
-### Qualities:
- - Properties listed
-  
-### Processes:
- - Act of transmission
- - Act of reception
-  
-### Realizable entity:
- - Signal
-
-### Immaterial entities?:
- - Space
- - Carrier wave
-
-### Temporal Region:
- - Propagation time
- - Reception
- - Transmission
+## test cases
+ - IEEE 802.11b. freq: 2.4GHz, 12-14 channels. rate: 1-11Mbit/s. bandwidth: 22MHz. modulation: Freq Hopping Spread Spectrum DBPSK, DQPSK, or QPSK. wavelength: 13cm
+ - TBS XF. freq: 915 or 868MHz , 100 channels. rate: 50 or 150Hz. bandwidth: 5 or 2.5MHz. modulation: Chirp Spread Spectrum. wavelength: 
 
 # Noted ambiguities:
  - not all protocols define freq, bandwidth, rate, modulation, and wavelength
