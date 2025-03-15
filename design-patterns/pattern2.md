@@ -34,6 +34,9 @@ graph RL
 		
 	NA[communication] --> N(BFO:Function):::BFO
 	        
+			AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
+			AAB[act of<br />reception] --> AA(Process)
+
 		AFA[transmission<br />period] --> AI
 		AFB[reception<br />period] --> AI
     		AFC[propagation<br />time] --> AI
@@ -48,10 +51,10 @@ graph RL
 		YAB -- participates_in --> AAB
 
 		YAC[detector] -- part_of --> YA
-		YAA -- participates_in --> AAC
+		YAC -- participates_in --> AAB
 
 		YAD[amplifier] -- part_of --> YA
-		YAA -- participates_in --> AAB
+		YAD -- participates_in --> AAC
 		
 YA -- concretizes --> JC
 		JC[signal] --> J(BFO:Realizable<br> Entity):::BFO
@@ -67,8 +70,6 @@ YA -- concretizes --> JC
 			UFD[modulation] -- is_about --> UF
 			UFF[encoding] -- is_about --> UF
 
-			AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
-			AAB[act of<br />reception] --> AA(Process)
 
 	
 	
