@@ -1,4 +1,4 @@
-# RF pattern draft
+# RF pattern draft, second pass
 ## Competency Questions
  - What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
  - What protocols are normally found at a given frequency?
