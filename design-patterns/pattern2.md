@@ -54,81 +54,80 @@
  - Reception
  - Transmission
 
-### Generically dependent continuant:
- - Also the properties, ugh... time to try out more specific relation types
-
-  
+# Noted ambiguities:
+ - not all protocols define freq, bandwidth, rate, modulation, and wavelength
+ - wavelength, frequency, bandwidth, and rate are mathematically interdependent
+ - sometimes one or more of these variables defines the protocol instead, probably
+ - sometimes none of them serve to define. CW is defined purely by encoding only, and is just as usable in longitudinal waves as it is in transverse waves.
 ```
-+---------------------key--------------------+
-| arrows are "is_a" unless marked otherwise  |
++---------------------key-0------------------+
+| arrows are relations                       |
+| relation is "is_a" unless marked otherwise |
+| all nodes are classes unless purple        |
+| purple nodes are particulars/instances     |
 +--------------------------------------------+
 ```
  ```mermaid
 
 graph RL
-	B(Continuant)-->A(Entity):::BFO
-	D(Specifically Dependent<br> Continuant)-->B(Continuant):::BFO
-	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)
-	F(Independent<br> Continuant)-->B(Continuant)
-	G(Material Entity)-->F(Independent<br> Continuant):::BFO
-	H(Immaterial<br> Entity)-->F(Independent<br> Continuant)
-	I(Quality)-->D(Specifically Dependent<br> Continuant):::BFO
-	J(Realizable<br> Entity):::BFO-->D(Specifically Dependent<br> Continuant)
-	K(Relational<br> Quality):::BFO-->I(Quality):::BFO
+	
+	M(BFO:Disposition):::BFO-->J(BFO:Realizable<br> Entity):::BFO
+	N(BFO:Function):::BFO-->M(BFO:Disposition):::BFO
 
-	M(Disposition):::BFO-->J(Realizable<br> Entity)
-	N(Function):::BFO-->M(Disposition)
+	AH(BFO:Temporal<br> Interval):::BFO-->AI(BFO:One-Dimensional<br> Temporal Region):::BFO
 
-	X(Fiat Object Part):::BFO-->G(Material<br> Entity):::BFO
-	Y(Object<br> Aggregate):::BFO-->G(Material<br> Entity):::BFO
-	Z(Object):::BFO-->G(Material<br> Entity):::BFO
-	C(Occurrent):::BFO-->A(Entity):::BFO
-	AA(Process):::BFO-->C(Occurrent):::BFO
-	AB(Process<br> Boundary):::BFO-->C(Occurrent)
-	AC(Temporal<br> Region):::BFO-->C(Occurrent)
-	AD(Spatiotemporal<br> Region):::BFO-->C(Occurrent)
-	AF(Zero-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region):::BFO
-	AI(One-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region):::BFO
-	AG(Temporal<br> Instant):::BFO-->AF(Zero-Dimensional<br> Temporal Region):::BFO
-	AH(Temporal<br> Interval):::BFO-->AI(One-Dimensional<br> Temporal Region):::BFO
-
-    	EC[signal<br /> property] --> E
+    	EC[signal<br /> property] --> E(BFO:Generically <br />Dependent Continuant):::BFO
 		
+	NA[communication] --> N(BFO:Function):::BFO
+	        
+		AFA[transmission<br />period] --> AI
+		AFB[reception<br />period] --> AI
+    		AFC[propagation<br />time] --> AI
 
-    	YA[radio] --> Y
+    	YA[radio] --> Z(BFO:Object):::BFO
 		YAA[antenna] -- part_of --> YA
-		YAB[tuner] -- part_of --> YA
-		YAC[detector] -- part_of --> YA
-		YAD[amplifier] -- part_of --> YA
-		
+		YAA -- participates_in --> AAC
+		YAA -- participates_in --> AAB
 
-		JC[signal] --> J
+		YAB[tuner] -- part_of --> YA
+		YAB -- participates_in --> AAC
+		YAB -- participates_in --> AAB
+
+		YAC[detector] -- part_of --> YA
+		YAA -- participates_in --> AAC
+
+		YAD[amplifier] -- part_of --> YA
+		YAA -- participates_in --> AAB
+		
+YA -- concretizes --> JC
+		JC[signal] --> J(BFO:Realizable<br> Entity):::BFO
     	
-		UE(wave property) --> K(Relational<br /> Quality)
+		UE(wave property) --> K(BFO:Relational<br /> Quality):::BFO
 			UEA[wavelength] -- is_about --> UE
 			UEB[frequency] -- is_about --> UE
 			UED[amplitude] -- is_about --> UE
 			UEF[polarity] -- is_about --> UE
-	UF(signal property) --> K(Relational<br /> Quality)
+	UF(signal property) --> K(BFO:Relational<br /> Quality):::BFO
 			UFA[rate] -- is_about --> UF
 			UFB[bandwidth] -- is_about --> UF
 			UFD[modulation] -- is_about --> UF
 			UFF[encoding] -- is_about --> UF
 
-			AAC[act of<br />transmission] --> AA(Process)
+			AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
 			AAB[act of<br />reception] --> AA(Process)
 
 	
 	
-	NA[communication] --> N(Function)
-	        
-		AFA[transmission<br />period] --> AI
-		AFB[reception<br />period] --> AI
-    AFC[propagation<br />time] --> AI
 
 
+
+subgraph Key 1
+K00(BFO class):::BFO
+K01[class]
+K02[particular]:::p
+end
     classDef BFO fill:#F5AD27,color:#060606
+    classDef p fill:#771177,color:#AAAAAA
+
 ```
 from https://github.com/BFO-ontology/BFO-2020
-
-i am trapped in property graph hell
