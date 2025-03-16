@@ -14,32 +14,31 @@
  - sometimes one or more of these variables defines the protocol instead, probably
  - sometimes none of them serve to define. CW is defined purely by encoding only, and is just as usable in longitudinal waves as it is in transverse waves.
 ```
-+---------------------key-0------------------+
++-Key-0--------------------------------------+
 | arrows are relations                       |
 | relation is "is_a" unless marked otherwise |
 | all nodes are classes unless purple        |
 | purple nodes are particulars/instances     |
 +--------------------------------------------+
 ```
- ```mermaid
+```mermaid
 
 graph RL
-	
+%%comments%%
 	M(BFO:Disposition):::BFO-->J(BFO:Realizable<br> Entity):::BFO
 	N(BFO:Function):::BFO-->M(BFO:Disposition):::BFO
 
 	AH(BFO:Temporal<br> Interval):::BFO-->AI(BFO:One-Dimensional<br> Temporal Region):::BFO
+		AFA[transmission<br />period] --> AI
+		AFB[reception<br />period] --> AI
+		AFC[propagation<br />time] --> AI
 
     	EC[signal<br /> property] --> E(BFO:Generically <br />Dependent Continuant):::BFO
 		
 	NA[communication] --> N(BFO:Function):::BFO
 	        
-			AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
-			AAB[act of<br />reception] --> AA(Process)
-
-		AFA[transmission<br />period] --> AI
-		AFB[reception<br />period] --> AI
-    		AFC[propagation<br />time] --> AI
+	AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
+	AAB[act of<br />reception] --> AA(BFO:Process):::BFO
 
     	YA[radio] --> Z(BFO:Object):::BFO
 		YAA[antenna] -- part_of --> YA
@@ -56,30 +55,24 @@ graph RL
 		YAD[amplifier] -- part_of --> YA
 		YAD -- participates_in --> AAC
 		
-YA -- concretizes --> JC
+		YA -- concretizes --> JC
 		JC[signal] --> J(BFO:Realizable<br> Entity):::BFO
     	
-		UE(wave property) --> K(BFO:Relational<br /> Quality):::BFO
+		UE[wave property] --> K(BFO:Relational<br /> Quality):::BFO
 			UEA[wavelength] -- is_about --> UE
 			UEB[frequency] -- is_about --> UE
 			UED[amplitude] -- is_about --> UE
 			UEF[polarity] -- is_about --> UE
-	UF(signal property) --> K(BFO:Relational<br /> Quality):::BFO
+
+		UF[signal property] --> K(BFO:Relational<br /> Quality):::BFO
 			UFA[rate] -- is_about --> UF
 			UFB[bandwidth] -- is_about --> UF
 			UFD[modulation] -- is_about --> UF
 			UFF[encoding] -- is_about --> UF
 
-
-	
-	
-
-
-
-subgraph Key 1
-K00(BFO class):::BFO
-K01[class]
-K02[particular]:::p
+subgraph Key-1
+K00(BFO:class):::BFO -- is_a --> K01[local<br />class]
+K02[particular<br />or instance]:::p -- instance_of --> K01
 end
     classDef BFO fill:#F5AD27,color:#060606
     classDef p fill:#771177,color:#AAAAAA
