@@ -4,6 +4,7 @@
  - What protocols are normally found at a given frequency?
  - What attribute measurements are required to identify a given protocol?
  - What hardware is required to detect a given protocol?
+ - Where and when are detections or emitters sensed?
 
 ## test cases
  - IEEE 802.11b. freq: 2.4GHz, 12-14 channels. rate: 1-11Mbit/s. bandwidth: 22MHz. modulation: Freq Hopping Spread Spectrum DBPSK, DQPSK, or QPSK. wavelength: 13cm
@@ -43,6 +44,9 @@ graph RL
 %%comments%%
 	M(BFO:Disposition):::BFO-->J(BFO:Realizable<br> Entity):::BFO
 	N(BFO:Function):::BFO-->M(BFO:Disposition):::BFO
+
+		OA[transceiver<br />position] --> O(BFO:Site):::BFO
+		OB[sensor<br />position] --> O 
 
 	AH(BFO:Temporal<br> Interval):::BFO-->AI(BFO:One-Dimensional<br> Temporal Region):::BFO
 		AFA[transmission<br />period] --> AI
