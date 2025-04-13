@@ -1,8 +1,9 @@
 # RF pattern draft, third pass
 ## Competency Questions
- - What frequencies, bandwidths, rates, modulations, wavelengths are defined by a given protocol?
+ - What transmission properties are defined by a given protocol?
  - What protocols are normally found at a given frequency?
  - What attribute measurements are required to identify a given protocol?
+ - What hardware is required to detect a given protocol?
 
 ## test cases
  - IEEE 802.11b. freq: 2.4GHz, 12-14 channels. rate: 1-11Mbit/s. bandwidth: 22MHz. modulation: Freq Hopping Spread Spectrum DBPSK, DQPSK, or QPSK. wavelength: 13cm
