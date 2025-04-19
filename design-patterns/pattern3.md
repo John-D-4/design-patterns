@@ -88,6 +88,16 @@ graph RL
 			UFD[modulation] -- is_about --> UF
 			UFF[encoding] -- is_about --> UF
 
+	PA[Bluetooth]:::p -- instance_of --> JC
+		PA -- bearer_of --> UE
+		PA -- bearer_of --> UF
+	PB[LTE]:::p -- instance_of --> JC
+		PB -- bearer_of --> UE
+		PB -- bearer_of --> UF
+	PC[LightBridge]:::p -- instance_of --> JC
+		PC -- bearer_of --> UE
+		PC -- bearer_of --> UF
+
 subgraph Key-1
 K00(BFO:class):::BFO -- is_a --> K01[local<br />class]
 K02[particular<br />or instance]:::p -- instance_of --> K01
