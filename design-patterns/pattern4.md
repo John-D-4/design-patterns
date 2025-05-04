@@ -1,6 +1,5 @@
-# RF pattern draft, fourth pass
-## Competency Question
- - What is required to locate BlueTooth protocol emissions?
+# RF pattern, fourth pass
+## Competency Question: What is required to locate BlueTooth protocol emissions?
 
 
 ```
@@ -15,17 +14,30 @@
 
 graph RL
 %%comments%%
+	B(Continuant)-->A(Entity):::BFO
+	C(BFO:Occurrent):::BFO-->A(Entity):::BFO
+	D(Specifically Dependent<br> Continuant)-->B(Continuant):::BFO
+	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)
+	F(Independent<br> Continuant)-->B(Continuant)
+	G(Material Entity):::BFO-->F(Independent<br> Continuant):::BFO
+	H(Immaterial<br> Entity):::BFO-->F(Independent<br> Continuant):::BFO
+	I(Quality):::BFO-->D(Specifically Dependent<br> Continuant):::BFO
+	J(Realizable<br> Entity):::BFO-->D(Specifically Dependent<br> Continuant):::BFO
+	K(Relational<br> Quality):::BFO-->I(Quality):::BFO
 	M(BFO:Disposition):::BFO-->J(BFO:Realizable<br> Entity):::BFO
 	N(BFO:Function):::BFO-->M(BFO:Disposition):::BFO
+	O(BFO:Site):::BFO-->H(BFO:Immaterial<br> Entity):::BFO
+	Z(Object):::BFO-->G(Material<br> Entity):::BFO
+	AA(Process):::BFO-->C(Occurrent):::BFO
+	AC(Temporal<br> Region):::BFO-->C(Occurrent)
+		OA[transmitting<br />radio<br />position] --> O(BFO:Site):::BFO
+		OB[receiving<br />radio<br />position] --> O 
 
-		OA[transceiver<br />position] --> O(BFO:Site):::BFO
-		OB[sensor<br />position] --> O 
-
-	AH(BFO:Temporal<br> Interval):::BFO-->AI(BFO:One-Dimensional<br> Temporal Region):::BFO
-		AFA[transmission<br />period] --> AI
+		AFA[transmission<br />period] --> AI(BFO:One-Dimensional<br> Temporal Region):::BFO
 		AFB[reception<br />period] --> AI
 		AFC[propagation<br />time] --> AI
-		
+	AI(BFO:One-Dimensional<br> Temporal Region):::BFO-->AC(Temporal<br> Region):::BFO
+
 	NA[communication] --> N(BFO:Function):::BFO
 	        
 	AAC[act of<br />transmission] --> AA(BFO:Process):::BFO
@@ -64,12 +76,6 @@ graph RL
 	PA[Bluetooth]:::p -- instance_of --> JC
 		PA -- bearer_of --> UE
 		PA -- bearer_of --> UF
-	PB[LTE]:::p -- instance_of --> JC
-		PB -- bearer_of --> UE
-		PB -- bearer_of --> UF
-	PC[LightBridge]:::p -- instance_of --> JC
-		PC -- bearer_of --> UE
-		PC -- bearer_of --> UF
 
 subgraph Key-1
 K00(BFO:class):::BFO -- is_a --> K01[local<br />class]
@@ -80,3 +86,5 @@ end
 
 ```
 from https://github.com/BFO-ontology/BFO-2020
+
+https://github.com/BFO-ontology/BFO-2020/blob/master/documentation/axiomatization-pds/occurrent-mereology.pdf
