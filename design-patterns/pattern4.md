@@ -17,7 +17,7 @@ graph RL
 	B(Continuant)-->A(Entity):::BFO
 	C(BFO:Occurrent):::BFO-->A(Entity):::BFO
 	D(Specifically Dependent<br> Continuant)-->B(Continuant):::BFO
-	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)
+%%	E(Generically Dependent<br> Continuant):::BFO-->B(Continuant)%%
 	F(Independent<br> Continuant)-->B(Continuant)
 	G(Material Entity):::BFO-->F(Independent<br> Continuant):::BFO
 	H(Immaterial<br> Entity):::BFO-->F(Independent<br> Continuant):::BFO
