@@ -1,4 +1,4 @@
-# RF pattern draft, fourth pass
+# RF pattern draft, third pass
 ## Competency Questions
  - What transmission properties are defined by a given protocol?
  - What protocols are normally found at a given frequency?
